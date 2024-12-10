@@ -1,11 +1,7 @@
 import axios from 'axios'
 
-const login = async () => {
+const login = async () => {}
 
-}
+const register = async () => {}
 
-const register = async () => {
-
-}
-
-export {login, register }
+export { login, register }

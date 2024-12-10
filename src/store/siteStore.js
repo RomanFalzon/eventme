@@ -1,8 +1,11 @@
-import { create } from 'zustand'
+import { create } from 'zustand';
 
-const useStore = create((set) => ({
-    bears: 0,
-    increasePopulation: () => set((state) => ({ bears: state.bears + 1 })),
-    removeAllBears: () => set({ bears: 0 }),
-    updateBears: (newBears) => set({ bears: newBears }),
-}))
+const useSiteStore = create((set, get) => ({
+    config: null, // Config Object
+    setConfig: (config) => set({ config }), // Method to update the site config
+    
+    // Getters
+    getCountryCode: () => get().config?.countryCode ?? null,
+}));
+
+export default useSiteStore;
